@@ -3,9 +3,15 @@
 {% block content %}
 <h2 class="my-4">{{post_data.title}}</h2>
 <hr>
+{% if post_data.image %}
+<img src="{{ post_data.image.url }}" alt="" class="rounded detail-img">
+{% endif %}
+<hr>
 <p>{{post_data.created}} by {{ post_data.author }}</p>
+
 <hr>
 <p>{{post_data.content|linebreaksbr}}</p>
+
 {% if user.is_authenticated%}
 <hr>
 <div class="d-flex mb-5">
