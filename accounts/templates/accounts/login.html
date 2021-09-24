@@ -1,0 +1,21 @@
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="card card-auth my-5 mx-auth">
+  <div class="card-body">
+    <h5 class="card-title text-center">login</h5>
+    <form action="" method="post" class="form-auth">
+      {% csrf_token %}
+      <div class="form-label-group">
+        {% render_field form.login class='form-controll' placeholder='user name' %}
+      </div>
+      <div class="form-label-group">
+        {% render_field form.password class="form-controll" placeholder='password' %}
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit">login</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

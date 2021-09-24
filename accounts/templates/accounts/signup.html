@@ -1,0 +1,27 @@
+{% extends 'app/base.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<div class="card card-auth my-5 mx-auth">
+  <div class="card-body">
+    <h5 class="card-title text-center">singup</h5>
+    <form action="" method="post" class="form-auth">
+      {% csrf_token %}
+      <div class="form-label-group">
+        {% render_field form.username class='form-controll' placeholder='user name' %}
+      </div>
+      <div class="form-label-group">
+        {% render_field form.email class='form-controll' placeholder='email' %}
+      </div>
+      <div class="form-label-group">
+        {% render_field form.password1 class='form-controll' placeholder='password' %}
+      </div>
+      <div class="form-label-group">
+        {% render_field form.password2 class="form-controll" placeholder='password(確認用)' %}
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary" type="submit">signup</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
